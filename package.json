@@ -1,0 +1,29 @@
+{
+  "name": "redux-observer",
+  "version": "1.0.0",
+  "description": "Middleware for flipper-redux-observer",
+  "main": "src/index.ts",
+  "author": "Bekir Cinar",
+  "license": "MIT",
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "react-native",
+    "flipper",
+    "perf",
+    "redux"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "peerDependencies": {
+    "react-native-flipper": ">=0.131.1"
+  },
+  "devDependencies": {
+    "jsondiffpatch": "^0.4.1",
+    "date-fns": "~1.30.1",
+    "typescript": "^4.1.3"
+  }
+}

@@ -28,7 +28,7 @@ const createInitialAction = (store: any) => {
 	currentConnection?.send('initStore', state);
 };
 
-const createDebugger = () => (store: any) => {
+export default () => (store: any) => {
 	if (currentConnection === null) {
 		addPlugin({
 			getId() {
@@ -89,5 +89,3 @@ const createDebugger = () => (store: any) => {
 		return result;
 	};
 };
-
-export default createDebugger;

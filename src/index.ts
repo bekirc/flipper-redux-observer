@@ -2,12 +2,6 @@ import { format as formatDate } from 'date-fns';
 import { diff, formatters } from 'jsondiffpatch';
 import { addPlugin, Flipper } from 'react-native-flipper';
 
-export type Configuration = {
-	resolveCyclic?: boolean;
-	actionsBlacklist?: Array<string>;
-	stateWhitelist?: string[];
-};
-
 let currentConnection: Flipper.FlipperConnection | null = null;
 
 const error = {

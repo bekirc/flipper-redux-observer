@@ -12,7 +12,6 @@
   "keywords": [
     "react-native",
     "flipper",
-    "perf",
     "redux"
   ],
   "scripts": {

@@ -4,6 +4,7 @@
   "description": "Middleware for flipper-plugin-redux-observer",
   "main": "src/index.ts",
   "author": "Bekir Cinar",
+  "homepage": "https://github.com/bekirc/flipper-redux-observer",
   "license": "MIT",
   "files": [
     "src"

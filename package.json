@@ -1,6 +1,6 @@
 {
   "name": "flipper-redux-observer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Middleware for flipper-plugin-redux-observer",
   "main": "src/index.ts",
   "author": "Bekir Cinar",

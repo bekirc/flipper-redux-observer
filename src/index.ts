@@ -1,5 +1,5 @@
 import { format as formatDate } from 'date-fns';
-import { diff, formatters } from 'jsondiffpatch';
+import { diff } from 'jsondiffpatch';
 import { addPlugin, Flipper } from 'react-native-flipper';
 
 let currentConnection: Flipper.FlipperConnection | null = null;
@@ -13,7 +13,7 @@ const createInitialAction = (store: any) => {
 	const initState = store.getState();
 
 	const state = {
-		id: startTime,
+		id: `${startTime}`,
 		time: formatDate(startTime, 'HH:mm:ss.SSS'),
 		action: { type: '@@INIT' },
 		state: initState,
@@ -67,14 +67,13 @@ export default () => (store: any) => {
 			const afterState = store.getState();
 			const now = Date.now();
 			const delta = diff(beforeState, afterState);
-            // @ts-ignore
-			const deltaJSONPatch = formatters.jsonpatch.format(delta || {}, beforeState);
+
 			const newActionEvent = {
-				id: startTime,
+				id: `${startTime} + ${action.type}`,
 				time: formatDate(now, 'HH:mm:ss.SSS'),
 				duration: `${now - startTime} ms`,
 				action: action,
-				diff: JSON.stringify(deltaJSONPatch),
+				diff: delta,
 			};
 
 			currentConnection.send('newAction', newActionEvent);
